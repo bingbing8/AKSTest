@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: test
+spec:
+  containers:
+  - name: test-container
+    image: e2eteam/pause:3.2
+    volumeMounts:
+    - name: test-volume
+      mountPath: C:\\tmp
+      readOnly: true
+  - name: test-container-rw
+    image: e2eteam/busybox:1.29
+    volumeMounts:
+    - name: test-volume
+      mountPath: C:\\tmp
+  restartPolicy: Never
+  volumns:
+    - name: test-volume
+      hostPath:
+        path: C:\\tmp
+        type: DirectoryOrCreate
+VolumeSource: source
+  nodeSelector:
+    "kubernetes.io/os": windows
+
+
