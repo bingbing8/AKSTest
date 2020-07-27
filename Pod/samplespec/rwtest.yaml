@@ -21,7 +21,6 @@ spec:
       hostPath:
         path: C:\\tmp
         type: DirectoryOrCreate
-VolumeSource: source
   nodeSelector:
     "kubernetes.io/os": windows
 
