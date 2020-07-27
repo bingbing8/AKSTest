@@ -16,7 +16,7 @@ spec:
     - name: test-volume
       mountPath: C:\\tmp
   restartPolicy: Never
-  volumns:
+  volumes:
     - name: test-volume
       hostPath:
         path: C:\\tmp
