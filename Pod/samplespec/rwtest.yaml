@@ -11,7 +11,7 @@ spec:
       mountPath: C:\\tmp
       readOnly: true
   - name: test-container-rw
-    image: e2eteam/busybox:1.29
+    image: e2eteam/pause:3.2
     volumeMounts:
     - name: test-volume
       mountPath: C:\\tmp
