@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: rw-test
+spec:
+  containers:
+  - name: test-container-rw
+    image: e2eteam/pause:3.2
+    volumeMounts:
+    - name: test-volume
+      mountPath: C:\tmp
+  restartPolicy: Never
+  volumes:
+    - name: test-volume
+      hostPath:
+        path: C:\tmp
+        type: DirectoryOrCreate
+  nodeSelector:
+    "kubernetes.io/os": windows
+
+
