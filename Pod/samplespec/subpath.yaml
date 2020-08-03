@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: var-expansion-subpath-test
+  labels:
+    name: var-expansion-subpath-test
+spec:
+  containers:
+  - env:
+    - name: POD_NAME
+      value: /tmp
+  - name: dapi-container
+    image: e2eteam/busybox:1.29
+    volumeMounts:
+    - name: workdir1
+      mountPath: /logscontainer
+      subPathExpr:: $(POD_NAME)
+  restartPolicy: Never
+  volumes:
+    - name: workdir1
+      emptyDir: {}
+  nodeSelector:
+    "kubernetes.io/os": windows
+
+
