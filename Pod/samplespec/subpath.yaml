@@ -6,15 +6,16 @@ metadata:
     name: var-expansion-subpath-test
 spec:
   containers:
-  - env:
+  - name: dapi-container
+    env:
     - name: POD_NAME
       value: /tmp
-  - name: dapi-container
+
     image: e2eteam/busybox:1.29
     volumeMounts:
     - name: workdir1
       mountPath: /logscontainer
-      subPathExpr:: $(POD_NAME)
+      subPathExpr: $(POD_NAME)
   restartPolicy: Never
   volumes:
     - name: workdir1
