@@ -21,6 +21,6 @@ spec:
     - name: workdir1
       emptyDir: {}
   nodeSelector:
-    "kubernetes.io/os": windows
+    "kubernetes.io/hostname": 6226k8s001
 
 
