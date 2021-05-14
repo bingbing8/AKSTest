@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: acceleratedNetwork
+spec:
+  containers:
+  - name: test
+    image: "mcr.microsoft.com/windows/servercore:1809"
+    command: ["sleep"]
+    args: ["3600"]
+    volumeMounts:
+    - mountPath: "c:\tools"
+      name: test-volume
+  volumes:
+  - name: test-volume
+    hostPath:
+      path: "c:\tools"
+      type: Directory
+  restartPolicy: Never
+  nodeSelector:
+    "kubernetes.io/hostname": "2916k8s000"
+
+
