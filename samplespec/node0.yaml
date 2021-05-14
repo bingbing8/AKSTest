@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: acceleratedNetwork
+  name: acceleratednetwork0
 spec:
   containers:
   - name: test
@@ -9,12 +9,12 @@ spec:
     command: ["sleep"]
     args: ["3600"]
     volumeMounts:
-    - mountPath: "c:\tools"
+    - mountPath: "c:\\tools"
       name: test-volume
   volumes:
   - name: test-volume
     hostPath:
-      path: "c:\tools"
+      path: "c:\\tools"
       type: Directory
   restartPolicy: Never
   nodeSelector:
