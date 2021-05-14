@@ -7,7 +7,7 @@ spec:
   - name: test
     image: "mcr.microsoft.com/windows/servercore:1809"
     command: ["cmd"]
-    args: ["/c","sleep","3600"]
+    args: ["/c","ping","-t", "127.0.0.1"]
     volumeMounts:
     - mountPath: "c:\\tools"
       name: test-volume
