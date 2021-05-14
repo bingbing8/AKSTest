@@ -6,8 +6,8 @@ spec:
   containers:
   - name: test
     image: "mcr.microsoft.com/windows/servercore:1809"
-    command: ["sleep"]
-    args: ["3600"]
+    command: ["cmd"]
+    args: ["/c","sleep","3600"]
     volumeMounts:
     - mountPath: "c:\\tools"
       name: test-volume
