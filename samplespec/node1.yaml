@@ -18,6 +18,6 @@ spec:
       type: DirectoryOrCreate
   restartPolicy: Never
   nodeSelector:
-    "kubernetes.io/hostname": "2080k8s001"
+    "kubernetes.io/hostname": "1525k8s001"
 
 
