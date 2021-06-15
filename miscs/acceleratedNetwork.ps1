@@ -9,6 +9,8 @@ if(-Not (Test-Path $cx3driverPath -PathType Leaf))
     Invoke-WebRequest -Uri https://mywinimgbldstg.blob.core.windows.net/mywinimgbldcontr/MLNX_VPI_WinOF-5_50_54000_All_win2019_x64.exe -OutFile $cx3driverPath
 }
 
+start-process -Wait -FilePath $cx3driverPath "/s","/v""/qn"""
+
 $cx4driverPath = "MLNX_WinOF2-2_60_51000_All_x64.exe"
 if(-Not (Test-Path $cx4driverPath -PathType Leaf))
 {
